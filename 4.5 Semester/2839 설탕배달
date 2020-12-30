@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main(){
+	int input;
+	int count = 0;
+	
+	scanf("%d", &input);
+	
+	while(input > 0){
+		if(input % 5 == 0){ // input이 5의 배수인지 확인
+			input -=5;
+			count++;
+			//printf("1: %d\n", input);
+		}
+		else if(input % 3 ==0){// input이 3의 배수인지 확인
+			input -=3;
+			count++;
+			//printf("2: %d\n", input);
+		}
+		else if(input > 5){ //input이 5보다 크면 우선 5를 빼준다.
+			input -=5;
+			count++;
+			//printf("3: %d\n", input);
+		}
+		else{ // input이 3이나 5로 나누어 지지 않으면 -1 출력.
+			count = -1;
+			break;
+		}
+		
+	}
+	printf("%d", count);
+}
